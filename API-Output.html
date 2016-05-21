@@ -9,7 +9,7 @@
 					client_id: 'af5ac2eb5d06343085dc2964496e8382'
 					});
 				SC.get('/tracks/13158665').then(function(tracks){
-					if('tracks/playback_count' >= 1000) {
+					if(tracks.playback_count >= 1000) {
 						console.log('tracks/title' + ': A');
 					} else if('tracks/playback_count' <= 999 || 'tracks/playback_count' >= 800) {
 						console.log('tracks/title' + ': B');

@@ -10,15 +10,15 @@
 					});
 				SC.get('/tracks/13158665').then(function(tracks){
 					if(tracks.playback_count >= 1000) {
-						console.log('tracks/title' + ': A');
-					} else if('tracks/playback_count' <= 999 || 'tracks/playback_count' >= 800) {
-						console.log('tracks/title' + ': B');
-					} else if('tracks/playback_count' <= 799 || 'tracks/playback_count' >= 600) {
-						console.log('tracks/title' + ': C');
-					} else if('tracks/playback_count' <= 599 || 'tracks/playback_count' >= 400) {
-						console.log('tracks/title' + ': D');
+						console.log(tracks.title + ': A');
+					} else if(tracks.playback_count <= 999 || tracks.playback_count >= 800) {
+						console.log(tracks.title + ': B');
+					} else if(tracks.playback_count <= 799 || tracks.playback_count >= 600) {
+						console.log(tracks.title + ': C');
+					} else if(tracks.playback_count <= 599 || tracks.playback_count >= 400) {
+						console.log(tracks.title + ': D');
 					} else {
-						console.log('tracks/title' + ': F');
+						console.log(tracks.title + ': F');
 					}
 				});
 			
@@ -26,7 +26,17 @@
 	</head>
 
 	<body>
-		<div style="width:500px;height:380px;">Here's your track grade</div>
+		<div style="width:500px;height:380px;">
+			<h1>Check the console for your track grade</h1>
+			<ul>
+				<li>If your track has more than 1,000 playbacks, it gets an A</li>
+				<li>Between 800 to 999 playbacks gives you a B</li>
+				<li>From 600 to 799 playbacks, and you have a C</li>
+				<li>From 400 to 599 playbacks, gets you a D</li>
+				<li>Less than 400 playbacks, and you have an F<i> sorry!</i></li>
+			</ul>
+		</div>
 	</body>
 
 </html>
+<!-- The script grades a track based on playback count -->

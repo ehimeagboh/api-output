@@ -4,22 +4,21 @@
 		<title>Track Grader</title>
 			<script src="https://connect.soundcloud.com/sdk/sdk-3.1.1.js">
 			</script>
-			<script type='text/javascript' >
+			<script type='text/javascript'>
 				SC.initialize({
 					client_id: 'af5ac2eb5d06343085dc2964496e8382'
 					});
-				var tracks = "/tracks/13158665"
-				SC.get(tracks).then(function(){
-					if(tracks.playback_count >= 1000) {
-						console.log(tracks.title + ': A');
-					} else if(tracks.playback_count <= 999 || tracks.playback_count >= 800) {
-						console.log(tracks.title + ': B');
-					} else if(tracks.playback_count <= 799 || tracks/playback_count >= 600) {
-						console.log(tracks.title + ': C');
-					} else if(tracks.playback_count <= 599 || tracks.playback_count >= 400) {
-						console.log(tracks.title + ': D');
+				SC.get('/tracks/13158665').then(function(tracks){
+					if('tracks/playback_count' >= 1000) {
+						console.log('tracks/title' + ': A');
+					} else if('tracks/playback_count' <= 999 || 'tracks/playback_count' >= 800) {
+						console.log('tracks/title' + ': B');
+					} else if('tracks/playback_count' <= 799 || 'tracks/playback_count' >= 600) {
+						console.log('tracks/title' + ': C');
+					} else if('tracks/playback_count' <= 599 || 'tracks/playback_count' >= 400) {
+						console.log('tracks/title' + ': D');
 					} else {
-						console.log(tracks.title + ': F');
+						console.log('tracks/title' + ': F');
 					}
 				});
 			
